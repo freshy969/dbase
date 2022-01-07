@@ -1,0 +1,20 @@
+[
+    {
+        "ID_id": "---",
+        "ST_text": "",
+        "AR_likedBy": [],
+        "NU_likes": 0,
+        "FL_aFile": "",
+        "GPS_coords": [
+            "0",
+            "0"
+        ],
+        "DT_aDate": "",
+        "PO_userPointer_Users": "",
+        "FL_video": "",
+        "ST_category": "",
+        "BL_aBool": false,
+        "DT_updatedAt": "",
+        "DT_createdAt": ""
+    }
+]

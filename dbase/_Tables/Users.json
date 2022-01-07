@@ -1,0 +1,18 @@
+[
+    {
+        "ID_id": "---",
+        "ST_username": "",
+        "ST_email": "",
+        "ST_password": "",
+        "BL_emailVerified": false,
+        "ST_fullname": "",
+        "FL_file": "",
+        "ST_iosDeviceToken": "",
+        "ST_androidDeviceToken": "",
+        "NU_badge": 0,
+        "BL_bool": false,
+        "ST_signInWith": "",
+        "DT_updatedAt": "",
+        "DT_createdAt": ""
+    }
+]
