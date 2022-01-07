@@ -42,3 +42,17 @@ On FileZilla, right-click on a file and select the *View/Edit* option. That will
 ![filezilla2](https://user-images.githubusercontent.com/39766031/148562373-6a8dc164-256b-466f-bedf-467eeb720a34.png)
 
 
+## Protect JSON data files from being viewed by Web clients
+
+If you installed DBase in an Ubuntu instance, you must open the apache2.conf file - it's into the /etc/apache2/ directory and you can access it with Filezilla - and add the following lines on the bottom that file:
+ `
+ <Directory /var/www/html/>
+    <Files "*.json">
+      Order allow,deny
+      Deny from all
+    </Files>
+ </Directory>
+ `
+ 
+ 
+
