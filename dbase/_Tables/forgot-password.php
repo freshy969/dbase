@@ -38,7 +38,7 @@ if ($emailExists) {
 	$message = 'Please click the following link to reset your password:'."\n".htmlspecialchars($DATABASE_PATH).'_Tables/reset-password.php?email='.$email;
 	$headers = array('From' => $from, 'To' => $to, 'Subject' => $subject, 'Reply-To' => $from);
 	$smtp = Mail::factory('smtp', array(
-		'host' => 'ssl://n3plcpnl0096.prod.ams3.secureserver.net',
+		'host' => $SMTP_HOST,
 		'port' => '465',
 		'auth' => true,
 		'username' => $EMAIL_FOR_SENDMAIL, 
