@@ -2,7 +2,7 @@
 
 ![dbase](https://user-images.githubusercontent.com/39766031/148632406-a8728f39-bd14-4dcf-930b-f74d7e1e1f94.png)
 
-DBase is an easy-to-use backend for your mobile and web applications, host the files in an Ubuntu server and use the SDKs to perform CRUD operations, create infinite databases, and send Push Notifications to iOS and Android devices
+DBase is an easy-to-use backend for your mobile and web applications, host the files in an Ubuntu server and use the SDKs to perform CRUD operations, create infinite databases, and send Push Notifications to iOS and Android devices.
 
 
 # Requirements
@@ -175,5 +175,15 @@ Here's how the admin panel looks like, where you can view your database data, ad
 
 ![dashboard](https://user-images.githubusercontent.com/39766031/148633646-5fe503bc-be20-4c0d-b7f6-497723180e3f.png)
 
+## Understanding Data Tables in DBase
+The DBase backend is based on JSON files, they are the **Tables** that host all data.<br>
 
+In the `_Tables` folder of the package you can find 2 files called `Users.json` and `Posts.json`.<br>
 
+You can rename the `Posts.json` file, or add new Tables with the **Add Table** button, anyway follow these important directions:<br>
+1. You MUST NOT delete or rename the `Users.json` file
+2. Use the **Add Table** button on the Dashboard to create JSON files in the `_Tables` folder which will work as your database tables
+3. When you create a Table, the next thing to do is to **add columns**, otherwise data cannot be properly saved.
+4. Your Tables must at least have 1 row to keep their column names, so if you use the Dashboard to delete rows, DBase will create an empty default row that won't be visible in the Dashboard, but if you manually delete all data in a JSON Table file, you will lose all columns and will have to add them again.
+You may manually edit a JSON file on your HTML editor, just be careful to keep the correct syntax and data
+Make a backup of your work frequently, as you may mess something up or lose important data for your database
