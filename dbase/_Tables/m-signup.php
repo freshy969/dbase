@@ -118,7 +118,7 @@ if ($_POST['signInWith'] != "") {
 			$message .= 'Please verify your email address by clicking the following link:'."\n".htmlspecialchars($DATABASE_PATH).'_Tables/email-verification.php?email='.$email;
 			$headers = array('From' => $from, 'To' => $to, 'Subject' => $subject, 'Reply-To' => $from);
 			$smtp = Mail::factory('smtp', array(
-			        'host' => 'ssl://n3plcpnl0096.prod.ams3.secureserver.net',
+			        'host' => $SMTP_HOST,
 			        'port' => '465',
 			        'auth' => true,
 			        'username' => $EMAIL_FOR_SENDMAIL, 
