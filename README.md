@@ -24,6 +24,7 @@ Knowledge of Xcode and Swift programming
 4. Knowledge of Android Studio and Java/XML programming.
 5. A real device to test the app before submitting it to the Play Store – Emulators may fail during tests, they are not reliable like a real device is
 
+
 # Installation
 Option 1:
 With FileZilla (recommended), upload the DBase folder into the root of your server - the /var/www/html/ directory on AWS Lightsail with Ubuntu 18.04).
@@ -32,6 +33,7 @@ Option 2:
 You may also protect your API by renaming the DBase folder into some random characters - something like as45DfR6y9S, or whatever you want - then upload that folder into the root of your server.
 
 In any case, take note of the name of the API folder in order to propely configure the SDKs.
+
 
 # Configurations
 
@@ -42,17 +44,35 @@ On FileZilla, right-click on a file and select the *View/Edit* option. That will
 ![filezilla2](https://user-images.githubusercontent.com/39766031/148562373-6a8dc164-256b-466f-bedf-467eeb720a34.png)
 
 
-## Protect JSON data files from being viewed by Web clients
+## Protect JSON data files from being discovered
 
-If you installed DBase in an Ubuntu instance, you must open the apache2.conf file - it's into the /etc/apache2/ directory and you can access it with Filezilla - and add the following lines on the bottom that file:
- `
+If you installed DBase in an Ubuntu instance, you must open the apache2.conf file - it's into the /etc/apache2/ directory and you can access it with Filezilla - and add the following lines on the bottom of that file:
+
+```
  <Directory /var/www/html/>
     <Files "*.json">
       Order allow,deny
       Deny from all
     </Files>
  </Directory>
- `
+```
+
+In this way, nobody will ever see any JSON file of your database from a browser, not even you, and your data are safe.
+
+## DBase Databse path
+
+Open the `_config.php` file and edit the database path:
+
+``` $DATABASE_PATH = "https://yourdomain.com/dbase/"; ```
+
+You must change that string into the URL of your server, where you've uploaded the DBase folder into - even if you've renamed it.
  
- 
+Example: Let's pretend your domain name is mydomain.net and you kept the DBase folder's name. You should set the **$DATABASE_PATH** variable as it follows:
+
+``` $DATABASE_PATH = "https://mydomain.com/dbase/"; ```
+
+Instead, if you've renamed the DBase folder into something else:
+
+``` $DATABASE_PATH = "https://mydomain.com/your-new-folder-name/"; ```
+
 
