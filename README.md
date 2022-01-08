@@ -239,4 +239,56 @@ Click che **Delete a Table** tool button, select the Table you want to delete an
 <img width="267" alt="deletetable" src="https://user-images.githubusercontent.com/39766031/148635153-f266c739-c81e-4d27-91eb-8de027dd1bdd.png">
 <img width="471" alt="deletetable2" src="https://user-images.githubusercontent.com/39766031/148635155-b2c7a1bb-8d72-4bcc-952d-519fe876cd4f.png">
 
+## Add a row
+When you want to add a row to a Table, click the **Add Row** button ~ either in the **Tools** menu or use the quick button:
+
+<img width="245" alt="addrow" src="https://user-images.githubusercontent.com/39766031/148635451-a88e0149-4fd9-4872-afc6-7b31758afa36.png">
+<img width="302" alt="addrow2" src="https://user-images.githubusercontent.com/39766031/148635452-81f24d71-44ed-4bdc-9ca1-7a2dc1c8d334.png">
+
+## Add a Column
+Click the **Add Column** button ~ either from the **Tools** menu or the quick button ~ and select the Type of data you want to set between the following ones:
+```
+String
+Number
+Array
+File
+Boolean
+GPS
+Pointer
+Date
+```
+Type a name for your column and click **Add column**.
+
+If the Table is empty, your new column gets created along with 3 default ones, which are:
+```
+ID_id
+DT_createdAt
+DT_updatedAt
+```
+
+<img width="236" alt="addcolumn" src="https://user-images.githubusercontent.com/39766031/148635569-26d43b1c-9110-4ce3-83eb-89d75b27c355.png">
+<img width="493" alt="addcolumn2" src="https://user-images.githubusercontent.com/39766031/148635570-0e210c66-7ec7-4c55-aaac-beff309a1691.png">
+
+**IMPORTANT ~ FOR THE `Users` TABLE!**
+
+When you add a column in the empty `Users` table with the Dashboard, DBase adds a few default columns that are needed for the Web and Mobile SDKs to work properly, as well as for the whole API:
+```
+ID_id
+DT_createdAt
+DT_updatedAt
+ST_username
+ST_password
+ST_email
+ST_iosDeviceToken
+ST_androidDeviceToken
+NU_badge
+BL_emailVerified
+ST_signInWith
+```
+
+**Although the Dashboard doesn't allow you to delete those columns, it's still good to know that you MUST NOT manually delete them from the `Users.json` file, neither change their names!**
+
+
+
+
 
