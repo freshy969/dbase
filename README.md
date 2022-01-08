@@ -187,3 +187,45 @@ You can rename the `Posts.json` file, or add new Tables with the **Add Table** b
 4. Your Tables must at least have 1 row to keep their column names, so if you use the Dashboard to delete rows, DBase will create an empty default row that won't be visible in the Dashboard, but if you manually delete all data in a JSON Table file, you will lose all columns and will have to add them again.
 You may manually edit a JSON file on your HTML editor, just be careful to keep the correct syntax and data
 Make a backup of your work frequently, as you may mess something up or lose important data for your database
+
+## Top Navigation Buttons
+On the top navigation bar you can find 3 buttons:<br>
+ 1. Tools
+ 2. Refresh
+ 3. Logout
+ 
+By clicking the **Tools** button you can find all the buttons that allow you to manage the database, such as **Add Table**, **Add Column**, etc.
+
+## Add a Table
+You can create a Table by clicking the **Add Table** button and typing the desired name.
+
+<img width="1054" alt="addtable" src="https://user-images.githubusercontent.com/39766031/148634714-deb0f825-6b68-4080-8fb0-555e8f51e532.png">
+
+**IMPORTANT:**
+1. If you want to manually edit a Table's data, you must open its JSON file on your favorite HTML editor from your server's `_Tables` folder
+2. If you want to delete a Table, delete its JSON file form your server
+3. If you want to change a Table name, simply rename its JSON files
+4. Spaces and special characters are not allowed while naming a Table, so:
+```
+MyTable -> OK
+
+My Table -> NO
+@My Talbe -> NO
+$myTable -> NO
+```
+
+## Import Tables
+Click the **Import Tables** button in the Dashboard and choose one or more JSON files (just make sure they are compatible with the DBase's syntax for Tables):
+
+<img width="434" alt="import" src="https://user-images.githubusercontent.com/39766031/148634810-7da7b3d9-2378-402a-8078-745c7fca5a52.png">
+<img width="485" alt="import2" src="https://user-images.githubusercontent.com/39766031/148634816-4b33859d-8133-410e-97e3-8bd9bc99aad4.png">
+
+## Export Tables
+You can download JSON tables with the **Export a Table** button and save them as a backup in your machine:
+
+<img width="357" alt="export" src="https://user-images.githubusercontent.com/39766031/148634879-eab8609e-2769-48c3-be50-32f55d3d2871.png">
+<img width="493" alt="export2" src="https://user-images.githubusercontent.com/39766031/148634884-0f194f22-929e-4add-8428-dcb52dbbaedb.png">
+
+
+
+
