@@ -45,9 +45,9 @@ On FileZilla, right-click on a file and select the *View/Edit* option. That will
 ![filezilla2](https://user-images.githubusercontent.com/39766031/148562373-6a8dc164-256b-466f-bedf-467eeb720a34.png)
 
 
-## Protect JSON data files from being discovered
+## Prevent JSON data files from being viewed
 
-If you installed DBase in an Ubuntu instance, you must open the apache2.conf file - it's into the /etc/apache2/ directory and you can access it with Filezilla - and add the following lines on the bottom of that file:
+If you installed DBase in an Ubuntu instance, open the `apache2.conf` file - it's into the `/etc/apache2/` directory and you can access it with Filezilla - and add the following lines on the bottom of that file:
 
 ```
  <Directory /var/www/html/>
@@ -58,10 +58,8 @@ If you installed DBase in an Ubuntu instance, you must open the apache2.conf fil
  </Directory>
 ```
 
-In this way, nobody will ever see any JSON file of your database from a browser, not even you, and your data are safe.
 
-
-## Edit the *_config.php* file
+## The *_config.php* file
 
 Open `_config.php` file and start by editing the database path:
 
@@ -104,6 +102,19 @@ $PASSWORD_FOR_SENDMAIL = "your-password"; // <-- set a password
 $SMTP_HOST = "ssl://address"; // <-- Your ssl address
 ```
 
+
+> In case you want to use a Gmail address:
+```
+  $SMTP_HOST = 'ssl://smtp.gmail.com';
+  $EMAIL_FOR_SENDMAIL = 'your_email@gmail.com';
+  $PASSWORD_FOR_SENDMAIL = 'your_gmail_password' 
+```
+  
+**IMPORTANT: You must also turn the "Less Secure App" option ON on your Gmail settings here.**
+<br>
+Be aware that the Gmail SMTP server sends no more than 99 emails/day, and the `from` input gets ignored, so the emails you'll receive will show your gmail address in the `FROM` field.
+
+
 ## Google Sign In ~ Web OAuth Key
 
 In order to sing in with Google on a Login web page, you must provide your own OAuth key.
@@ -140,3 +151,19 @@ If you don't have' a Firebase project on your Firebase Console, create one and e
 
 Remember to also download the **google-services.json** file and replace the one in the app folder of the Android Studio project's folder, that file will set the values of your project to send/receive Push Notifications in your Android app.
 
+## Email Verification
+If you want to send an email verification link to new users who sign up for the first time in your apps/website, just set the following variable into true:
+
+```$IS_EMAIL_VERIFICATION = false;```
+
+> NOTE: If you want to edit the message and other details of the Verification email, open the `m-signup.php` file that's inside the `_Tables` folder, scroll down and check the code inside the `if ($IS_EMAIL_VERIFICATION) { ... }` statement.
+> 
+Do not change or remove the `$APP_NAME` and `$DATABASE_PATH` variables, you may change the message strings and "From" email address.
+
+
+## Utility Functions
+The `_config.php` file contains some utility functions and variables that make the entire system work.
+
+Unless you're an experience developer, do not edit anything below this comment:
+
+```// UTILITY FUNCTIONS AND GLOBAL VARIABLES```
