@@ -167,3 +167,13 @@ The `_config.php` file contains some utility functions and variables that make t
 Unless you're an experience developer, do not edit anything below this comment:
 
 ```// UTILITY FUNCTIONS AND GLOBAL VARIABLES```
+
+
+# The DBase Dashboard
+
+Here's how the admin panel looks like, where you can view your database data, add/delete columns, edit/delete/add rows and sort objects, as well as send Push Notifications to mobile devices:
+
+![dashboard](https://user-images.githubusercontent.com/39766031/148633646-5fe503bc-be20-4c0d-b7f6-497723180e3f.png)
+
+
+
