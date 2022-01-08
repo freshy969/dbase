@@ -227,5 +227,16 @@ You can download JSON tables with the **Export a Table** button and save them as
 <img width="493" alt="export2" src="https://user-images.githubusercontent.com/39766031/148634884-0f194f22-929e-4add-8428-dcb52dbbaedb.png">
 
 
+## Rename a Table
+From the Tools menu, click che **Rename a Table** button, select the Table you want to rename, type a new name for it and hit **Rename Table**
+
+<img width="318" alt="renametable" src="https://user-images.githubusercontent.com/39766031/148635113-d9b51ba4-ba2c-4364-a16c-2e5736840ec7.png">
+<img width="490" alt="renametable2" src="https://user-images.githubusercontent.com/39766031/148635115-ac542bf0-c91f-4267-bff7-f3bb49879db7.png">
+
+## Delete a Table
+Click che **Delete a Table** tool button, select the Table you want to delete and hit **Delete Table**
+
+<img width="267" alt="deletetable" src="https://user-images.githubusercontent.com/39766031/148635153-f266c739-c81e-4d27-91eb-8de027dd1bdd.png">
+<img width="471" alt="deletetable2" src="https://user-images.githubusercontent.com/39766031/148635155-b2c7a1bb-8d72-4bcc-952d-519fe876cd4f.png">
 
 
