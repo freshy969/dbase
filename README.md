@@ -1,12 +1,13 @@
 # DBase
 
-<img src="http://3.67.163.164/dbase/assets/img/dbase.png" />
+![dbase](https://user-images.githubusercontent.com/39766031/148632406-a8728f39-bd14-4dcf-930b-f74d7e1e1f94.png)
 
-DBase is an easy-to-use backend for your mobile and web applications
+DBase is an easy-to-use backend for your mobile and web applications, host the files in an Ubuntu server and use the SDKs to perform CRUD operations, create infinite databases, and send Push Notifications to iOS and Android devices
+
 
 # Requirements
-1. A VPS Server, minimum 2GB RAM, 1 vCPUs, 60GB Disk Storage - Amazon AWS Lightsail with Ubuntu is the best choice in terms of speed, reliability and price.
-2. Sublime Text (recommended), or any other HTML/text editor of your choice.
+1. A VPS Server, minimum 2GB RAM, 1 vCPUs ~ AWS Lightsail with Ubuntu 18.04 is highly recommended in terms of performance and prices
+2. Sublime Text (recommended), or any other HTML/text editor of your choice
 3. An FTP account confgured in FileZilla, needed to upload/edit files
 4. Chrome Web Browser (recommended), and/or Safari or Firefox
 
@@ -59,9 +60,10 @@ If you installed DBase in an Ubuntu instance, you must open the apache2.conf fil
 
 In this way, nobody will ever see any JSON file of your database from a browser, not even you, and your data are safe.
 
-## DBase Databse path
 
-Open the `_config.php` file and edit the database path:
+## Edit the *_config.php* file
+
+Open `_config.php` file and start by editing the database path:
 
 ``` $DATABASE_PATH = "https://yourdomain.com/dbase/"; ```
 
@@ -75,4 +77,56 @@ Instead, if you've renamed the DBase folder into something else:
 
 ``` $DATABASE_PATH = "https://mydomain.com/your-new-folder-name/"; ```
 
+
+## Application name
+Set the name of your application in this variable:
+
+``` $APP_NAME = "DBase"; ```
+
+## Admin login credentials
+Change the default username and password strings into your own ones ~ they are needed to access the DBase admin dashboard:
+```
+$ADMIN_USERNAME = "admin";
+$ADMIN_PASSWORD = "admin";
+```
+
+## Admin email address
+Provide an existing email address of your choice for users to get in touch with you:
+
+``` $ADMIN_EMAIL = "myemail@address.com"; ```
+
+## Data for Pear Mail PHP
+Since this backend contains the necessary code to allow you to send email with [Pear PHP mail](https://pear.php.net/package/Mail/) you must set your credentials here:
+
+```
+$EMAIL_FOR_SENDMAIL = "email@example.com"; // <-- set an email address for send-mail.php
+$PASSWORD_FOR_SENDMAIL = "your-password"; // <-- set a password
+$SMTP_HOST = "ssl://address"; // <-- Your ssl address
+```
+
+## Google Sign In ~ Web OAuth Key
+
+In order to sing in with Google on a Login web page, you must provide your own OAuth key.
+Create it on your own [Google Cloud Platform](https://console.cloud.google.com/apis/credentials) and set it in this variable:
+
+``` $GOOGLE_SIGNIN_KEY = ''; ```
+
+## Apple Sign In + iOS Push Notifications
+In order to make your iOS app send and receive Push Notifications and Sign In with Apple, you must perform the following actions:
+1. Register your app's Bundle Identifier (the App ID) on your **[Apple Developer Account](https://developer.apple.com/account/) -> Certificates, Identifiers & Profiles -> Identifiers** section
+2. Click the Keys option from the left menu, then the **(+)** blue button to add a new Key.
+3. Type a key name, enable the **Apple Push Notifications service (APNs)** and **Sign In with Apple** options in the Register a New Key section.
+4. Click the Configure button next to the Sign In with Apple option and select your *Bundle Identifier* from the **Primary App ID** dropdown menu. Lastly, click the Save button.
+5. Download the `AuthKey.p8` file on your computer - pay attention, you'll be able to download it only once, so save it in a safe place.
+6. On the Configure key page, click the Continue and then the Save button.
+7. Upload that p8 file inside the `_Push` folder.
+When you're done, replace the following variables in the `_config.php` file with your own data:
+
+```
+$AUTH_KEY_FILE = 'AuthKey_ABC123EFG.p8'; // Your p8 Key file name
+$APN_KEY_ID = 'ABC123EFG';    // Your Apple Push Notification Key ID, you can get it by removing 'AuthKey_' and '.p8' from your Key file's name
+$TEAM_ID = 'Z123ABC456D';   
+$BUNDLE_ID = 'com.yourname.appname';    // Your iOS App's Bundle Identifier, the one you've set in Xcode
+$APN_URL = 'https://api.development.push.apple.com'; // OR: 'https://api.push.apple.com';   [for Production environment] */
+```
 
