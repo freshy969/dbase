@@ -130,3 +130,13 @@ $BUNDLE_ID = 'com.yourname.appname';    // Your iOS App's Bundle Identifier, the
 $APN_URL = 'https://api.development.push.apple.com'; // OR: 'https://api.push.apple.com';   [for Production environment] */
 ```
 
+> NOTE: You can leave the `$APN_URL` variable as it is, since Push Notifications will still work even if you publish your app on the App Store without setting it into Production environment. It's just your choice.
+
+
+## Android Push Notifications
+If you don't have' a Firebase project on your Firebase Console, create one and enter the **Project Overview -> Cloud Messaging** section, copy the `Server key` from the **Project credentials** box and paste it in this varibale:
+
+``` $FCM_SERVER_KEY = ''; ```
+
+Remember to also download the **google-services.json** file and replace the one in the app folder of the Android Studio project's folder, that file will set the values of your project to send/receive Push Notifications in your Android app.
+
