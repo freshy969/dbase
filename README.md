@@ -4,6 +4,8 @@
 
 DBase is an easy-to-use backend for your mobile and web applications, host the files in an Ubuntu server and use the SDKs to perform CRUD operations, create infinite databases, and send Push Notifications to iOS and Android devices.
 
+**This Readme file includes the complete Documentation of DBase, so keep reading!**
+
 
 # Requirements
 1. A VPS Server, minimum 2GB RAM, 1 vCPUs ~ AWS Lightsail with Ubuntu 18.04 is highly recommended in terms of performance and prices
@@ -288,6 +290,55 @@ ST_signInWith
 
 **Although the Dashboard doesn't allow you to delete those columns, it's still good to know that you MUST NOT manually delete them from the `Users.json` file, neither change their names!**
 
+
+## Column Types
+
+There are 9 types of columns for your data, it's important to learn their syntax and meaning, so you'll be able to properly choose them while creating new columns for your database.
+
+**ID** -> composed by `ID_` prefix and `id` suffix<br>
+>This is the object Identifier of each row of the Table. It cannot be created manually, it gets automatically created by the API and its key is always `ID_id`. It also cannot be edited, but it can be copied by a double-click on its cell.
+
+**String** | composed by `ST_` prefix | the suffix will be the name you assigned to it<br>
+>This is a String to host and display text
+
+**Number** | composed by `NU_` prefix | the suffix will be the name you assigned to it<br>
+>It supports integer and decimal numbers. PLEASE NOTE that decimal numbers must have the dot (.) as separator, not the comma (,).
+
+> Example: `123.45`
+
+**Array** | composed by `AR_` prefix | the suffix will be the name you assigned to it<br>
+>This type is usually used to store arrays of Strings like object IDs or other text.<br>
+It's comma-separated, so be careful while storing an array, put commas where they are needed and do not use the array [""] brackets, just type values separated by commas in the array's input field.
+
+> Example: `lorem,ipsum,dolor,sit`
+
+**File** | composed by `FL_` prefix | the suffix will be the name you assigned to it
+>This type hosts the URL of an uploaded file. Physical files get stored inside the uploads folder
+
+**Boolean** | composed by `BL_` prefix | the suffix will be the name you assigned to it
+>It's either true or false, as per standard JSON syntax.<br>
+Just keep in mind that if you use an input text field instead of a Checkbox or Switch button, the values you must pass are either "0" or "1" (True or False)
+
+**GPS** | composed by `GPS_` prefix | the suffix will be the name you assigned to it
+>This type is an array of 2 decimal numbers, the latitude and longitude coordinates, usually used for location purposes.<br>
+Like the Number data type, the decimal separator of the coordinates must be a dot (.), and the separator of the 2 coordinates must be a comma (,)
+
+>Example: 12.236548,-45.845987
+
+**Pointer** | composed by `PO_` prefix | the suffix will be the name you assigned to it
+>This type hosts the ID of an object taken from another Table. For instance, a user's ID from the Users table.<br>
+It's clickable in the Dashboard, it opens the selected object's row
+
+**Date** | composed by `DT_` prefix | the suffix will be the name you assigned to it
+>The Date format is `YYYY-MM-DDTHH:mm:ss` and it's a **String**
+
+**It's important to first plan what tables and columns you need to display and edit in your app or website, then create the proper JSON files into the _Tables folder and add the necessary columns in your Dashboard.**
+
+## Rename a column
+Click the **Rename Column** button, select the column you want to rename, type a new name and hit **Rename Column**
+
+<img width="261" alt="rencol" src="https://user-images.githubusercontent.com/39766031/148635912-8ad3faaa-edbd-4181-8a2a-cb6ce01939ce.png">
+<img width="484" alt="rencol2" src="https://user-images.githubusercontent.com/39766031/148635914-6ebb680f-b22a-40c9-9626-fe7b3cfa6cdf.png">
 
 
 
