@@ -340,6 +340,90 @@ Click the **Rename Column** button, select the column you want to rename, type a
 <img width="261" alt="rencol" src="https://user-images.githubusercontent.com/39766031/148635912-8ad3faaa-edbd-4181-8a2a-cb6ce01939ce.png">
 <img width="484" alt="rencol2" src="https://user-images.githubusercontent.com/39766031/148635914-6ebb680f-b22a-40c9-9626-fe7b3cfa6cdf.png">
 
+## Delete a column
+Click the **Delete a Column** button, select the column you wish to remove, then hit **Delete column**
+
+<img width="267" alt="delecolumn" src="https://user-images.githubusercontent.com/39766031/148773015-acaea682-9ce7-49fc-a2e6-031edb4927b8.png">
+<img width="530" alt="delcol2" src="https://user-images.githubusercontent.com/39766031/148773026-5a204c44-51ed-436f-8490-ad7e5578e892.png">
+
+> NOTE: The column names will be the full ones, which means that you'll see prefix and suffix together. Example: ST_text
+
+## Search filters
+You can search for data in your Dashboard by clicking the **Search filters** button, select the column you wish to search data for, then choose the condition of your query and type the desired data.<br>
+Lastly, click the **Apply filters** button
+
+<img width="279" alt="search" src="https://user-images.githubusercontent.com/39766031/148773358-2db04ead-2ca0-4fe9-b6ef-b52770e6dd42.png">
+<img width="542" alt="search2" src="https://user-images.githubusercontent.com/39766031/148773367-4f73e9cb-dbd8-43f0-a32d-c50838d1accc.png">
+
+## Sort data
+You can order data in your table by ascending or descending by clicking the **Sort Data** button, select a column and the desired sorting condition. Then click **Order data**
+
+<img width="268" alt="sort" src="https://user-images.githubusercontent.com/39766031/148773530-a7fd288f-1617-4f53-9309-cf91e916912f.png">
+<img width="544" alt="sort2" src="https://user-images.githubusercontent.com/39766031/148773544-4edfa409-8169-4166-8e9d-877992ce8319.png">
+
+## Order Columns
+You can set the order of columns in your database by clicking the **Order Columns** button.<br>
+Drag the columns up or down basedon the order you need, then click **Apply**
+
+<img width="287" alt="order" src="https://user-images.githubusercontent.com/39766031/148773738-6da96a13-e9e2-4f95-9b84-c073ce5c6ac0.png">
+<img width="569" alt="order2" src="https://user-images.githubusercontent.com/39766031/148773748-b1ff3350-ba65-41a2-b2b9-1b8565a0c03d.png">
+
+## Send Push Notifications
+You can send push notification texts to all those users who have allowed their devices to receive Push Notifications and are using an app based on this backend.<br>
+Click the **Send Push Notification** button in the left sidebar, select an audience, and type your message.<br>
+Hit the **Send Push Notification** button to send your push
+
+<img width="549" alt="push" src="https://user-images.githubusercontent.com/39766031/148774024-0c63ca90-d2e9-4fda-8e58-4221ba889f87.png">
+
+> You can also type a string in the `Push Type (optional)` field, in case you want to add a specific type for your push message.
+
+
+## Background Jobs
+The `bkgjobs.js` file can host useful Javascript or jQuery functions that will be used as Background Jobs, here's an example:
+
+```
+$(function () {
+ //------------------------------------------------
+ // BACKGROUND JOB - DELETE ROWS WITH PASSED DATE
+ //------------------------------------------------
+ setInterval(function() {
+   // Search Date in Posts.json
+   $.getJSON("Posts.json", function(Posts){
+     for (var i=0; i < Posts.length; i++) {
+       var obj = Posts[i];
+       var aDate = new Date(obj['DT_aDate']);
+       var now = new Date();
+       if (aDate <= now) {
+         var rowID = obj['ID_id']; 
+         var tableName = 'Posts';
+
+         // Delete row with passed Date
+         $.ajax({
+           url:"delete-row.php?tableName=Posts&rowID=" + rowID,
+           success:function(data) {
+             console.log('row deleted!');
+           }
+         });
+        }// ./ If
+	}// ./ For
+  });// ./ getJSON
+ }, 5 *1000); // execute every 5 seconds
+});// ./ on page load
+```
+
+This is just an example to show you how to create a Background Job, a function that runs in a loop every X seconds and performs an action in the database.
+In this case, the code checks for dates in the Posts table -> DT_aDate column, and if it finds some dates that are older than the current Date, it deletes the found rows.
+
+You can create your own Jobs by using the `setInterval(function() { ... }, SECONDS *1000);` function and perform actions in background (where "SECONDS" must be a number).<br>
+Please note that the Dashboard must be opened on your computer, like a 24/7 server.<br>
+In case you must shut it down, a good trick may be to open the Dashboard on your smartphone's browser (Safari, Chrome, etc.) and leave it in background (do not kill the browser app), and of course, keep your smartphone on :)
+
+
+----------------------------
+
+**For the Web, iOS, Android and Unity SDKs, check out their repositores:<br>
+
+
 
 
 
