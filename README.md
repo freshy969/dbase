@@ -6,6 +6,16 @@ DBase is an easy-to-use backend for your mobile and web applications, host the f
 
 **This Readme file includes the complete Documentation of DBase, so keep reading!**
 
+Web SDK: https://github.com/xscoder1/dbase-web-sdk
+
+iOS SDK: https://github.com/xscoder1/dbase-iOS-sdk
+
+Android SDK: https://github.com/xscoder1/dbase-android-sdk
+
+Unity SDK: *Coming soon*
+
+-----
+
 
 # Requirements
 1. A VPS Server, minimum 2GB RAM, 1 vCPUs ~ AWS Lightsail with Ubuntu 18.04 is highly recommended in terms of performance and prices
@@ -417,11 +427,6 @@ In this case, the code checks for dates in the Posts table -> DT_aDate column, a
 You can create your own Jobs by using the `setInterval(function() { ... }, SECONDS *1000);` function and perform actions in background (where "SECONDS" must be a number).<br>
 Please note that the Dashboard must be opened on your computer, like a 24/7 server.<br>
 In case you must shut it down, a good trick may be to open the Dashboard on your smartphone's browser (Safari, Chrome, etc.) and leave it in background (do not kill the browser app), and of course, keep your smartphone on :)
-
-
-----------------------------
-
-**For the Web, iOS, Android and Unity SDKs, check out their repositores:<br>
 
 
 
