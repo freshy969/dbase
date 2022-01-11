@@ -42,7 +42,7 @@ Knowledge of Xcode and Swift programming
 
 # Installation
 Option 1:
-With FileZilla (recommended), upload the DBase folder into the root of your server - the /var/www/html/ directory on AWS Lightsail with Ubuntu 18.04).
+With FileZilla (recommended), upload the DBase folder into the root of your server - for instance, the `/var/www/html/` directory on AWS Lightsail with Ubuntu 18.04).
 
 Option 2:
 You may also protect your API by renaming the DBase folder into some random characters - something like as45DfR6y9S, or whatever you want - then upload that folder into the root of your server.
