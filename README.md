@@ -20,7 +20,7 @@ Unity SDK: *Coming soon*
 
 
 # Requirements
-1. A VPS Server, minimum 2GB RAM, 1 vCPUs ~ AWS Lightsail with Ubuntu 18.04 is highly recommended in terms of performance and prices
+1. A VPS Server, minimum 2GB RAM, 1 vCPUs is required to run the DBase API. I strongly recommend **AWS Lightsail with Ubuntu 18.04**, solid servers and good prices
 2. Sublime Text (recommended), or any other HTML/text editor of your choice
 3. An FTP account confgured in FileZilla, needed to upload/edit files
 4. Chrome Web Browser (recommended), and/or Safari or Firefox
